@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>    
+<script>
+function sumar() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     
+     
+        document.getElementById("resultado").value = this.responseText;
+    }
+  };
+
+  var val_n = document.getElementById("n").value;
+  var val_x = document.getElementById("x").value;
+  
+
+
+
+  xhttp.open("GET", "login.php?n="+ val_n + "&x" +  valor_x + true);
+  xhttp.send();   
+}
+</script>
+</head>
+<body>
+<h2></h2>EJEMPLO DE  LOGIN</b></h2>
+<form action="">
+    <label for="operador1">usuario</label>
+    <input type="text" id="operador1" name="operador1">
+    <br/>
+    <label for="operador2">password</label>
+    <input type="password" id="operador2" name="operador2">
+      <br/> 
+    <input type="button" id="boton1" value="login"  onclick="login()">
+       <br/>
+      <label for="resultado">resultado:</label>
+    <input type="text" id="resultado" name="resultado">
+    </form>
+    </body>
+    </html>
